@@ -5,6 +5,9 @@
 # Change to repo directory
 cd ~/typewriter
 
+# Remove existing dotfiles from repo folder (ensures that removed files from .config get removed from github)
+rmdir rofi kitty hypr waybar waypaper wal wallpaper scripts
+
 # Copy in current dotfiles
 cp -r ~/.config/rofi ~/typewriter
 cp -r ~/.config/kitty ~/typewriter
