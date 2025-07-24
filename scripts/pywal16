@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+
+ln -sf ~/.cache/wal/colors-kitty.conf ~/.config/kitty/kitty.conf
+ln -sf ~/.cache/wal/colors-rofi-dark.rasi ~/.config/rofi/
+
+#rekiad qutebrowser if open
+#pgrep qutebrowser > /dev/null && qutebrowser ':config-source' #refresh qute if running
+
+#apply to thorium
+source ~/.config/scripts/thorium-theme.sh
+
+if pgrep "thorium" > /dev/null; then
+	pkill -o thorium
+	sleep 0.2
+	/usr/bin/thorium-browser --restore-last-session &
+fi
+
+#reload waybar
+pkill waybar
+sleep 0.2
+waybar &
+
+#reload hyprland
+hyprctl reload
+
+notify-send "Wallpaper and colorscheme changed; setting rgb value"
+sudo openrgb --noautoconnect -c $(tail -c +2 ~/.cache/wal/colors) -b 65
+ hang
