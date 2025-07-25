@@ -17,7 +17,7 @@ cp -r ~/.config/waypaper ~/typewriter
 cp -r ~/.config/wal ~/typewriter
 cp -r ~/.config/wallpaper ~/typewriter
 cp -r ~/.config/scripts ~/typewriter
-cp -r /usr/share/sddm/themes/silent/backgrounds/ ~/wallpaper
+sudo cp -r /usr/share/sddm/themes/silent/backgrounds/ ~/wallpaper
 
 # Copy in current sddm files
 
